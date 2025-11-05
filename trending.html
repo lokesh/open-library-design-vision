@@ -5,8 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trending Books - Open Library</title>
   <link rel="stylesheet" href="/styles/index.css">
-  <script type="module" src="/src/components/ol-button.js"></script>
-  <script type="module" src="/src/components/ol-theme-toggle.js"></script>
+  <script type="module" src="/src/components/index.js"></script>
+  <script type="module">
+    // Load books from JSON and display random selection
+    async function loadTrendingBooks() {
+      try {
+        const response = await fetch('/data/books.json');
+        const books = await response.json();
+
+        // Randomly select trending books
+        const shuffled = [...books].sort(() => Math.random() - 0.5);
+        const selectedBooks = shuffled.slice(0, 8);
+
+        // Populate the book list
+        const bookListContainer = document.querySelector('.book-list');
+        bookListContainer.innerHTML = selectedBooks.map(book => `
+          <div class="book-item">
+            <img src="${book.coverUrl}" alt="${book.title} cover" class="book-cover">
+            <h3>${book.title}</h3>
+            <p>${book.author}</p>
+          </div>
+        `).join('');
+      } catch (error) {
+        console.error('Error loading books:', error);
+        document.querySelector('.book-list').innerHTML = '<p>Error loading books. Please try again later.</p>';
+      }
+    }
+
+    // Load books when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadTrendingBooks);
+    } else {
+      loadTrendingBooks();
+    }
+  </script>
 </head>
 <body>
   <nav>
@@ -15,6 +47,7 @@
       <li><a href="/signup.html">Sign Up</a></li>
       <li><a href="/add-book.html">Add a Book</a></li>
       <li><a href="/trending.html">Trending Books</a></li>
+      <li><a href="/heading-demo.html">Heading Demo</a></li>
     </ul>
     <ol-theme-toggle></ol-theme-toggle>
   </nav>
@@ -24,41 +57,7 @@
     <p>Discover what readers are enjoying right now.</p>
 
     <div class="book-list">
-      <div class="book-item">
-        <h3>The C Programming Language</h3>
-        <p><strong>Author:</strong> Brian W. Kernighan, Dennis Ritchie</p>
-        <p><strong>Year:</strong> 1978</p>
-      </div>
-
-      <div class="book-item">
-        <h3>Twilight</h3>
-        <p><strong>Author:</strong> Stephenie Meyer</p>
-        <p><strong>Year:</strong> 2005</p>
-      </div>
-
-      <div class="book-item">
-        <h3>To Kill a Mockingbird</h3>
-        <p><strong>Author:</strong> Harper Lee</p>
-        <p><strong>Year:</strong> 1960</p>
-      </div>
-
-      <div class="book-item">
-        <h3>1984</h3>
-        <p><strong>Author:</strong> George Orwell</p>
-        <p><strong>Year:</strong> 1949</p>
-      </div>
-
-      <div class="book-item">
-        <h3>The Great Gatsby</h3>
-        <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-        <p><strong>Year:</strong> 1925</p>
-      </div>
-
-      <div class="book-item">
-        <h3>Pride and Prejudice</h3>
-        <p><strong>Author:</strong> Jane Austen</p>
-        <p><strong>Year:</strong> 1813</p>
-      </div>
+      <!-- Books will be dynamically loaded here -->
     </div>
   </main>
 </body>

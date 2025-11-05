@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up - Open Library</title>
   <link rel="stylesheet" href="/styles/index.css">
-  <script type="module" src="/src/components/ol-button.js"></script>
-  <script type="module" src="/src/components/ol-theme-toggle.js"></script>
+  <script type="module" src="/src/components/index.js"></script>
 </head>
 <body>
   <nav>
@@ -15,33 +14,94 @@
       <li><a href="/signup.html">Sign Up</a></li>
       <li><a href="/add-book.html">Add a Book</a></li>
       <li><a href="/trending.html">Trending Books</a></li>
+      <li><a href="/heading-demo.html">Heading Demo</a></li>
     </ul>
     <ol-theme-toggle></ol-theme-toggle>
   </nav>
 
   <main>
-    <h1>Sign Up</h1>
-    <p>Create an account to start building your library.</p>
-
-    <form onsubmit="event.preventDefault(); alert('Sign up form submitted!');">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
-      </div>
-
+    <form class="signup-form" onsubmit="event.preventDefault(); alert('Sign up form submitted!');">
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
       </div>
 
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <label for="screenname">Screen Name</label>
+        <p class="help-text">Public and cannot be changed later.</p>
+        <input type="text" id="screenname" name="screenname" required>
+        <p class="url-preview">Your URL: https://openlibrary.org/people/screenname</p>
       </div>
 
-      <ol-button type="submit">Sign Up</ol-button>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-input-wrapper">
+          <input type="password" id="password" name="password" required>
+          <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" name="newsletter">
+          <span>I want to receive news, announcements, and resources from the <a href="https://archive.org" target="_blank">Internet Archive</a>, the non-profit that runs Open Library.</span>
+        </label>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" name="print-disability">
+          <span>I want to apply* for <a href="#" target="_blank">special print disability access</a> through a qualifying program.</span>
+        </label>
+      </div>
+
+      <ol-button type="submit" variant="primary">Sign Up with Email</ol-button>
+
+      <p class="terms-text">By signing up, you agree to the Internet Archive's <a href="#" target="_blank">Terms of Service</a>.</p>
+
+      <p class="login-link">Already have an account? <a href="/login.html">Log in</a></p>
     </form>
   </main>
+
+  <script>
+    // Password toggle functionality
+    const togglePasswordBtn = document.querySelector('.toggle-password');
+    const passwordInput = document.getElementById('password');
+
+    togglePasswordBtn.addEventListener('click', () => {
+      const type = passwordInput.type === 'password' ? 'text' : 'password';
+      passwordInput.type = type;
+
+      // Update the icon (swap between eye and eye-slash)
+      const svg = togglePasswordBtn.querySelector('svg');
+      if (type === 'password') {
+        svg.innerHTML = `
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        `;
+      } else {
+        svg.innerHTML = `
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+          <line x1="1" y1="1" x2="23" y2="23"></line>
+        `;
+      }
+    });
+
+    // Screen name URL preview
+    const screennameInput = document.getElementById('screenname');
+    const urlPreview = document.querySelector('.url-preview');
+
+    screennameInput.addEventListener('input', (e) => {
+      const value = e.target.value || 'screenname';
+      urlPreview.textContent = `Your URL: https://openlibrary.org/people/${value}`;
+    });
+  </script>
 </body>
 </html>
 

@@ -55,6 +55,16 @@
   --notification-padding: var(--spacing-element);
   --notification-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
   --notification-max-width: 400px;
+
+  /* HEADING COMPONENTS */
+  --heading-display-1-size: var(--font-size-5xl);
+  --heading-display-2-size: var(--font-size-4xl);
+  --heading-display-3-size: var(--font-size-3xl);
+  --heading-title-1-size: var(--font-size-2xl);
+  --heading-title-2-size: var(--font-size-xl);
+  --heading-title-3-size: var(--font-size-lg);
+  --heading-title-4-size: var(--font-size-md);
+  --heading-title-5-size: var(--font-size-sm);
 }
 
 /* DARK MODE COMPONENT OVERRIDES */
@@ -68,5 +78,63 @@ body[data-theme="dark"] {
   /* Focus rings - brighter for visibility in dark mode */
   --button-focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.3);
   --input-focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* ========================================
+   HEADING COMPONENT STYLES (for light DOM)
+   ======================================== */
+
+.ol-heading {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  line-height: var(--font-heading-line-height);
+  color: var(--color-text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* Display sizes - largest headings */
+.ol-heading.display-1 {
+  font-size: var(--heading-display-1-size);
+  letter-spacing: -0.02em;
+}
+
+.ol-heading.display-2 {
+  font-size: var(--heading-display-2-size);
+  letter-spacing: -0.02em;
+}
+
+.ol-heading.display-3 {
+  font-size: var(--heading-display-3-size);
+  letter-spacing: -0.01em;
+}
+
+/* Title sizes - standard headings */
+.ol-heading.title-1 {
+  font-size: var(--heading-title-1-size);
+}
+
+.ol-heading.title-2 {
+  font-size: var(--heading-title-2-size);
+}
+
+.ol-heading.title-3 {
+  font-size: var(--heading-title-3-size);
+}
+
+.ol-heading.title-4 {
+  font-size: var(--heading-title-4-size);
+}
+
+.ol-heading.title-5 {
+  font-size: var(--heading-title-5-size);
+}
+
+.ol-heading-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 

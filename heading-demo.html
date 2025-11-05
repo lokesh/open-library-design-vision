@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heading Components Demo - Open Library</title>
+  <link rel="stylesheet" href="/styles/index.css">
+  <script type="module" src="/src/components/index.js"></script>
+  <style>
+    main {
+      padding: var(--spacing-8);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .demo-section {
+      margin-bottom: var(--spacing-12);
+      padding: var(--spacing-6);
+      border: 1px solid var(--color-border-primary);
+      border-radius: var(--radius-card);
+      background: var(--color-bg-secondary);
+    }
+
+    .demo-item {
+      margin-bottom: var(--spacing-6);
+      padding: var(--spacing-4);
+      background: var(--color-bg-primary);
+      border-radius: var(--radius-md);
+    }
+
+    .demo-label {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-2);
+      font-family: var(--font-family-mono);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/signup.html">Sign Up</a></li>
+      <li><a href="/add-book.html">Add a Book</a></li>
+      <li><a href="/trending.html">Trending Books</a></li>
+      <li><a href="/heading-demo.html">Heading Demo</a></li>
+    </ul>
+    <ol-theme-toggle></ol-theme-toggle>
+  </nav>
+
+  <main>
+    <h1 style="margin-bottom: var(--spacing-8);">Heading Components Demo</h1>
+
+  <div class="demo-section">
+    <h2>Display Sizes</h2>
+    <p style="margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">
+      Large, attention-grabbing headings for hero sections and major page sections
+    </p>
+
+    <div class="demo-item">
+      <ol-heading element="h1" size="display-1">Display 1 Heading</ol-heading>
+      <br>
+      <ol-heading element="h2" size="display-2">Display 2 Heading</ol-heading>
+      <br>
+      <ol-heading element="h3" size="display-3">Display 3 Heading</ol-heading>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Title Sizes</h2>
+    <p style="margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">
+      Standard heading sizes for content hierarchy
+    </p>
+
+    <div class="demo-item">
+      <ol-heading element="h1" size="title-1">Title 1 Heading</ol-heading>
+      <br>
+      <ol-heading element="h2" size="title-2">Title 2 Heading</ol-heading>
+      <br>
+      <ol-heading element="h3" size="title-3">Title 3 Heading</ol-heading>
+      <br>
+      <ol-heading element="h4" size="title-4">Title 4 Heading</ol-heading>
+      <br>
+      <ol-heading element="h5" size="title-5">Title 5 Heading</ol-heading>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>With Icons</h2>
+    <p style="margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">
+      Headings can include optional icons for visual interest
+    </p>
+
+    <div class="demo-item">
+      <ol-heading element="h1" size="display-2" icon="📚">Books Collection</ol-heading>
+      <br>
+      <ol-heading element="h2" size="title-1" icon="⭐">Featured Authors</ol-heading>
+      <br>
+      <ol-heading element="h3" size="title-2" icon="🔍">Search Results</ol-heading>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Flexible Elements</h2>
+    <p style="margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">
+      Can render as any HTML element while maintaining heading styles
+    </p>
+
+    <div class="demo-item">
+      <ol-heading element="div" size="title-1">This is a div styled as a heading</ol-heading>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Usage Examples</h2>
+
+    <h3>Basic Usage:</h3>
+    <pre><code>&lt;ol-heading element="h1" size="display-1"&gt;
+  My Heading Text
+&lt;/ol-heading&gt;
+
+&lt;ol-heading element="h2" size="title-2" icon="📚"&gt;
+  Heading with Icon
+&lt;/ol-heading&gt;</code></pre>
+
+    <h3>Properties:</h3>
+    <ul>
+      <li><strong>element</strong>: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' (default: 'h1')</li>
+      <li><strong>size</strong>: 'display-1' | 'display-2' | 'display-3' | 'title-1' | 'title-2' | 'title-3' | 'title-4' | 'title-5' (default: 'title-1')</li>
+      <li><strong>icon</strong>: string (optional)</li>
+    </ul>
+  </div>
+  </main>
+</body>
+</html>
+
