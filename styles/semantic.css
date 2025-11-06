@@ -45,7 +45,7 @@
   /* Use for primary actions, key interactive elements, brand expression */
 
   /* Primary brand color - main CTAs, important buttons, active states */
-  --color-primary: var(--color-blue-600);
+  --color-primary: var(--color-brand-primary);
 
   /* Text/icons on primary backgrounds - guaranteed contrast */
   --color-on-primary: var(--color-white);
@@ -57,7 +57,7 @@
   --color-on-primary-container: var(--color-blue-900);
 
   /* State: Hovered - apply on hover interactions */
-  --color-primary-hovered: var(--color-blue-700);
+  --color-primary-hovered: var(--color-brand-primary-hovered);
 
   /* State: Pressed - apply on active/pressed interactions */
   --color-primary-pressed: var(--color-blue-800);
@@ -108,7 +108,7 @@
   --color-border-strong: var(--color-neutral-400);
 
   /* Focus outline - keyboard focus indicator, accessibility critical */
-  --color-outline-focus: var(--color-blue-500);
+  --color-outline-focus: var(--color-primary);
 
   /* Error outline - validation errors, problematic fields */
   --color-outline-error: var(--color-red-600);
@@ -169,6 +169,7 @@
   --spacing-heading-bottom: var(--spacing-2);
 
   --spacing-section: var(--spacing-8);
+  --spacing-field: var(--spacing-6);
   --spacing-container: var(--spacing-12);
   --spacing-component: var(--spacing-6);
   --spacing-element: var(--spacing-4);
@@ -314,12 +315,12 @@ body[data-theme="dark"] {
 
   /* === PRIMARY BRAND - DARK === */
   /* Slightly lighter for better visibility on dark backgrounds */
-  --color-primary: var(--color-blue-500);
+  --color-primary: var(--color-brand-primary);
   --color-on-primary: var(--color-white);
   --color-primary-container: var(--color-blue-900);
   --color-on-primary-container: var(--color-blue-100);
 
-  --color-primary-hovered: var(--color-blue-400);
+  --color-primary-hovered: var(--color-brand-primary-hovered);
   --color-primary-pressed: var(--color-blue-600);
   --color-primary-focused: var(--color-blue-400);
 

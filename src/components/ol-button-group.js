@@ -23,6 +23,7 @@ export class OlButtonGroup extends LitElement {
         flex-direction: row;
         /* justify-content: space-between; */
         align-items: center;
+        margin-bottom: var(--spacing-3);
       }
 
       .button-group ::slotted(*) {

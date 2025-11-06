@@ -22,7 +22,8 @@ export class OlField extends LitElement {
     .field-wrapper {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing-1);
+      /* gap: var(--spacing-1); */
+      margin-bottom: var(--spacing-field);
     }
 
     .label {

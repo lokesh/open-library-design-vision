@@ -28,8 +28,9 @@
 
       <ol-field label="Screen Name" hint="Public and cannot be changed later." required>
         <ol-input id="screenname" name="screenname" type="text"></ol-input>
+        <p class="url-preview">Your URL: https://openlibrary.org/people/screenname</p>
       </ol-field>
-      <p class="url-preview">Your URL: https://openlibrary.org/people/screenname</p>
+
 
       <ol-field label="Password" required>
         <ol-input id="password" name="password" type="password"></ol-input>
@@ -53,11 +54,12 @@
         <ol-button slot="primary-action" type="submit" variant="primary">Sign Up with Email</ol-button>
         <ol-button slot="secondary-actions" variant="secondary">Cancel</ol-button>
       </ol-button-group>
-
       <p class="terms-text">By signing up, you agree to the Internet Archive's <a href="#" target="_blank">Terms of Service</a>.</p>
 
-      <p class="login-link">Already have an account? <a href="/login.html">Log in</a></p>
     </form>
+
+    <p class="login-link">Already have an account? <a href="/login.html">Log in</a></p>
+
   </main>
 
   <script>

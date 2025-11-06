@@ -38,29 +38,28 @@ export class OlButton extends LitElement {
     }
 
     button {
-      font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, sans-serif;
       border: none;
-      border-radius: 5px;
+      border-radius: var(--radius-button);
       cursor: pointer;
-      font-weight: normal;
+      font-family: var(--font-body-family);
+      /* font-weight: normal; */
       text-align: center;
       white-space: nowrap;
-      transition: background-color 0.2s ease, opacity 0.2s ease;
       box-sizing: border-box;
       width: 100%;
+      font-weight: var(--font-weight-semibold);
     }
 
     /* Size variants */
     button.small {
-      font-size: 14px;
-      padding: 5px 10px;
-      line-height: 1.4em;
+      font-size: var(--font-body-sm-size);
+      padding: var(--button-sm-padding-y) var(--button-sm-padding-x);
+      /* line-height: 1.4em; */
     }
 
     button.medium {
-      font-size: 16px;
-      padding: 7px 15px;
-      line-height: 1.5em;
+      font-size: var(--font-body-size);
+      padding: var(--button-padding-y) var(--button-padding-x);
     }
 
     button.large {
@@ -71,18 +70,18 @@ export class OlButton extends LitElement {
 
     /* Variant styles */
     button.primary {
-      background-color: hsl(202, 96%, 37%);
+      background-color: var(--color-primary);
       color: white;
     }
 
     button.primary:hover:not(:disabled) {
-      background-color: #135C7A;
+      background-color: var(--color-primary-hovered);
     }
 
     button.secondary {
       background-color: transparent;
-      color: #1B7FA7;
-      border: 2px solid #1B7FA7;
+      color: var(--color-secondary);
+      border: var(--border-width-control) solid var(--color-secondary);
     }
 
     button.secondary:hover:not(:disabled) {
