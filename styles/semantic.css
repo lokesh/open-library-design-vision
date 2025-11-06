@@ -9,13 +9,13 @@
   /* Surfaces define background layers in your UI */
 
   /* Main page/app background - use for primary content areas, body background */
-  --color-surface: var(--color-neutral-50);
+  --color-surface: var(--color-neutral-100);
 
   /* Secondary backgrounds - use for cards, sidebars, navigation, elevated panels */
-  --color-surface-variant: var(--color-neutral-50);
+  --color-surface-variant: var(--color-neutral-200);
 
   /* Tertiary backgrounds - use for subtle differentiation, nested cards, hover states on surfaces */
-  --color-surface-tertiary: var(--color-neutral-200);
+  --color-surface-tertiary: var(--color-neutral-300);
 
   /* High-contrast inverse surfaces - use for tooltips, toasts, inverse-themed components */
   --color-surface-inverse: var(--color-neutral-900);
@@ -80,20 +80,6 @@
   --color-secondary-pressed: var(--color-neutral-800);
   --color-secondary-focused: var(--color-neutral-500);
 
-  /* === SUCCESS SYSTEM === */
-  /* Use for positive feedback, confirmations, success states */
-
-  --color-success: var(--color-green-600);
-  --color-on-success: var(--color-white);
-
-  /* Success container - low-emphasis success backgrounds (alerts, banners) */
-  --color-success-container: var(--color-green-100);
-  --color-on-success-container: var(--color-green-900);
-
-  /* State variants */
-  --color-success-hovered: var(--color-green-700);
-  --color-success-pressed: var(--color-green-800);
-
   /* === ERROR SYSTEM === */
   /* Use for errors, destructive actions, validation failures */
 
@@ -108,33 +94,6 @@
   --color-error-hovered: var(--color-red-700);
   --color-error-pressed: var(--color-red-800);
 
-  /* === WARNING SYSTEM === */
-  /* Use for warnings, caution states, non-critical issues */
-
-  --color-warning: var(--color-yellow-500);
-  --color-on-warning: var(--color-neutral-900);
-
-  /* Warning container - low-emphasis warning backgrounds */
-  --color-warning-container: var(--color-yellow-100);
-  --color-on-warning-container: var(--color-yellow-900);
-
-  /* State variants */
-  --color-warning-hovered: var(--color-yellow-600);
-  --color-warning-pressed: var(--color-yellow-700);
-
-  /* === INFO SYSTEM === */
-  /* Use for informational messages, tips, neutral notifications */
-
-  --color-info: var(--color-blue-500);
-  --color-on-info: var(--color-white);
-
-  /* Info container - low-emphasis info backgrounds */
-  --color-info-container: var(--color-blue-100);
-  --color-on-info-container: var(--color-blue-900);
-
-  /* State variants */
-  --color-info-hovered: var(--color-blue-600);
-  --color-info-pressed: var(--color-blue-700);
 
   /* === BORDER & OUTLINE ROLES === */
   /* Use for visual separation and hierarchy */
@@ -241,7 +200,7 @@
   --button-padding-y: var(--spacing-inline);
   --button-font-size: var(--font-body-size);
   --button-font-weight: var(--font-body-weight);
-  --button-border-width: var(--border-width-1);
+  --button-border-width: var(--border-width-2);
   --button-focus-ring: var(--focus-ring);
 
   /* Button size variants */
@@ -254,7 +213,7 @@
   --button-lg-font-size: var(--font-body-lg-size);
 
   /* === INPUT COMPONENTS === */
-  --input-surface: var(--color-surface);
+  --input-surface: var(--color-white);
   --input-on-surface: var(--color-on-surface);
   --input-outline: var(--color-border-default);
   --input-outline-hovered: var(--color-outline-focus);
@@ -367,14 +326,6 @@ body[data-theme="dark"] {
   --color-secondary-pressed: var(--color-neutral-500);
   --color-secondary-focused: var(--color-neutral-300);
 
-  /* === SUCCESS - DARK === */
-  --color-success: var(--color-green-500);
-  --color-on-success: var(--color-white);
-  --color-success-container: var(--color-green-900);
-  --color-on-success-container: var(--color-green-100);
-
-  --color-success-hovered: var(--color-green-400);
-  --color-success-pressed: var(--color-green-600);
 
   /* === ERROR - DARK === */
   --color-error: var(--color-red-500);
@@ -385,23 +336,6 @@ body[data-theme="dark"] {
   --color-error-hovered: var(--color-red-400);
   --color-error-pressed: var(--color-red-600);
 
-  /* === WARNING - DARK === */
-  --color-warning: var(--color-yellow-500);
-  --color-on-warning: var(--color-neutral-900);
-  --color-warning-container: var(--color-yellow-900);
-  --color-on-warning-container: var(--color-yellow-100);
-
-  --color-warning-hovered: var(--color-yellow-400);
-  --color-warning-pressed: var(--color-yellow-600);
-
-  /* === INFO - DARK === */
-  --color-info: var(--color-blue-400);
-  --color-on-info: var(--color-white);
-  --color-info-container: var(--color-blue-900);
-  --color-on-info-container: var(--color-blue-100);
-
-  --color-info-hovered: var(--color-blue-300);
-  --color-info-pressed: var(--color-blue-500);
 
   /* === BORDERS & OUTLINES - DARK === */
   --color-border-default: var(--color-neutral-700);
