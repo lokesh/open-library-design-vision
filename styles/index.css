@@ -16,38 +16,6 @@ body {
   background-color: var(--color-surface);
 }
 
-nav {
-  /* background-color: var(--nav-surface); */
-  /* padding: 15px; */
-  margin-bottom: var(--spacing-section);
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  flex: 1;
-}
-
-nav a {
-  color: var(--color-text-primary);
-  text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  background-color: var(--color-surface-tertiary);
-  padding: var(--spacing-inline) var(--spacing-element);
-  border-radius: var(--radius-button);
-}
-
-nav a:hover {
-  /* color: var(--color-link-hovered); */
-  text-decoration: none;
-  background-color: var(--color-surface-tertiary-hovered);
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading-family);
   font-weight: var(--font-heading-weight);
@@ -297,6 +265,27 @@ input:focus {
   .trending-covers {
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
+  }
+}
+
+/* Cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-element);
+  margin-top: var(--spacing-element);
+}
+
+.cards-grid ol-card p {
+  color: var(--color-on-surface-variant);
+  margin: 0;
+  line-height: var(--line-height-normal);
+}
+
+/* Responsive layout for cards grid */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -3,7 +3,7 @@ import { LitElement, html, css } from 'lit';
 export class OlSection extends LitElement {
   static styles = css`
     section {
-      margin-bottom: var(--spaceng-section);
+      margin-bottom: var(--spacing-section);
     }
   `;
 

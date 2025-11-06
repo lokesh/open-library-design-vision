@@ -168,9 +168,8 @@
   --spacing-text-bottom: var(--spacing-1);
   --spacing-heading-bottom: var(--spacing-2);
 
-  --spacing-section: var(--spacing-8);
+  --spacing-section: var(--spacing-12);
   --spacing-field: var(--spacing-6);
-  --spacing-container: var(--spacing-12);
   --spacing-component: var(--spacing-6);
   --spacing-element: var(--spacing-4);
   --spacing-inline: var(--spacing-2);
@@ -248,24 +247,6 @@
   --card-shadow-hover: var(--elevation-medium);
   --card-border-width: var(--border-width-1);
 
-  /* === MODAL/OVERLAY COMPONENTS === */
-  --modal-surface: var(--color-surface);
-  --modal-on-surface: var(--color-on-surface);
-  --modal-scrim: var(--color-scrim);
-
-  --modal-padding: var(--spacing-container);
-  --modal-max-width: 600px;
-  --modal-shadow: var(--elevation-highest);
-
-  /* === NAVIGATION COMPONENTS === */
-  --nav-surface: var(--color-surface-variant);
-  --nav-on-surface: var(--color-on-surface);
-  --nav-outline: var(--color-border-subtle);
-
-  --nav-height: 60px;
-  --nav-padding-x: var(--spacing-component);
-  --nav-item-padding-x: var(--spacing-element);
-  --nav-item-padding-y: var(--spacing-2);
 
   /* === BADGE COMPONENTS === */
   --badge-padding-x: var(--spacing-2);

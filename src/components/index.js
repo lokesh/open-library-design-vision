@@ -6,4 +6,6 @@ import './ol-theme-toggle.js';
 import './ol-input.js';
 import './ol-field.js';
 import './ol-section.js';
+import './ol-main-nav.js';
+import './ol-card.js';
 

@@ -6,7 +6,6 @@ A minimal web app built with Lit web components and Vite, inspired by Open Libra
 
 - **Homepage** - Welcome page with quick action buttons
 - **Sign Up** - User registration form with new ol-input and ol-field components
-- **Add a Book** - Form to submit new books to the library
 - **Trending Books** - Display of currently popular books
 - **Heading Demo** - Showcase of the ol-heading component with various sizes
 - **Input Demo** - Comprehensive demo of ol-input and ol-field components
@@ -64,7 +63,6 @@ npm run preview
 /
 ├── index.html          # Homepage
 ├── signup.html         # Sign up page
-├── add-book.html       # Add book form page
 ├── trending.html       # Trending books page
 ├── heading-demo.html   # Heading component demo
 ├── input-demo.html     # Input & field component demo
