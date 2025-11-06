@@ -67,7 +67,7 @@ p.lead {
   font-size: var(--font-h4-size);
   /* font-weight: var(--font-heading-weight); */
   color: var(--color-on-surface-variant);
-  /* margin-bottom: 20px; */
+  margin-bottom: var(--spacing-section);
 }
 
 form {
