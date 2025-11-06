@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Library - Open Library</title>
+  <link rel="stylesheet" href="/styles/index.css">
+  <script type="module" src="/src/components/index.js"></script>
+  <style>
+    main {
+      padding: var(--spacing-8);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .demo-section {
+      margin-bottom: var(--spacing-section);
+      padding: var(--spacing-4);
+      border: 1px solid var(--color-border-default);
+      border-radius: var(--radius-card);
+      background: var(--color-bg-secondary);
+    }
+
+    .demo-section h2 {
+      margin-top: 0;
+      margin-bottom: var(--spacing-component);
+      color: var(--color-text-primary);
+    }
+
+    .demo-item {
+      /* margin-bottom: var(--spacing-section); */
+    }
+
+    .demo-label {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-2);
+      font-family: var(--font-family-mono);
+    }
+
+    .form-demo {
+      max-width: 500px;
+    }
+
+    .submit-result {
+      margin-top: var(--spacing-component);
+      padding: var(--spacing-element);
+      background-color: var(--color-background-secondary);
+      border-radius: var(--radius-card);
+      display: none;
+    }
+
+    .submit-result.show {
+      display: block;
+    }
+
+    .submit-result pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .demo-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-component);
+    }
+
+    .component-nav {
+      position: sticky;
+      top: var(--spacing-4);
+      margin-bottom: var(--spacing-section);
+      padding: var(--spacing-4);
+      background: var(--color-surface-variant);
+      border: 1px solid var(--color-border-default);
+      border-radius: var(--radius-card);
+    }
+
+    .component-nav h3 {
+      margin: 0 0 var(--spacing-2) 0;
+      font-size: var(--font-size-base);
+    }
+
+    .component-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: var(--spacing-4);
+      flex-wrap: wrap;
+    }
+
+    .component-nav a {
+      color: var(--color-text-link);
+      text-decoration: none;
+      /* padding: var(--spacing-1) var(--spacing-2); */
+      font-weight: var(--font-weight-semibold);
+      border-radius: var(--radius-sm);
+      transition: background-color 0.2s;
+    }
+
+    .component-nav a:hover {
+      background-color: var(--color-bg-hover);
+    }
+  </style>
+</head>
+<body>
+  <ol-main-nav></ol-main-nav>
+
+  <main>
+    <ol-heading element="h1" size="display-2">Component Library</ol-heading>
+    <p style="margin-bottom: var(--spacing-8); color: var(--color-text-secondary);">
+      A comprehensive showcase of all Open Library design system components.
+    </p>
+
+    <nav class="component-nav">
+      <h3>Jump to:</h3>
+      <ul>
+        <li><a href="#headings">Headings</a></li>
+        <li><a href="#inputs">Inputs & Fields</a></li>
+      </ul>
+    </nav>
+
+    <!-- HEADING COMPONENTS -->
+    <section id="headings">
+      <ol-heading element="h2" size="display-3" icon="📝">Heading Components</ol-heading>
+      <p style="margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">
+        Flexible heading components that support different sizes, semantic elements, and optional icons.
+      </p>
+
+      <div class="demo-section">
+        <ol-heading element="h2" size="title-1">Display Sizes</ol-heading>
+        <p style="margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">
+          Large, attention-grabbing headings for hero sections and major page sections
+        </p>
+
+        <div class="demo-item">
+          <ol-heading element="h1" size="display-1">Display 1 Heading</ol-heading>
+          <br>
+          <ol-heading element="h2" size="display-2">Display 2 Heading</ol-heading>
+          <br>
+          <ol-heading element="h3" size="display-3">Display 3 Heading</ol-heading>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <ol-heading element="h2" size="title-1">Title Sizes</ol-heading>
+        <p style="margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">
+          Standard heading sizes for content hierarchy
+        </p>
+
+        <div class="demo-item">
+          <ol-heading element="h1" size="title-1">Title 1 Heading</ol-heading>
+          <br>
+          <ol-heading element="h2" size="title-2">Title 2 Heading</ol-heading>
+          <br>
+          <ol-heading element="h3" size="title-3">Title 3 Heading</ol-heading>
+          <br>
+          <ol-heading element="h4" size="title-4">Title 4 Heading</ol-heading>
+          <br>
+          <ol-heading element="h5" size="title-5">Title 5 Heading</ol-heading>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <ol-heading element="h2" size="title-1">With Icons</ol-heading>
+        <p style="margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">
+          Headings can include optional icons for visual interest
+        </p>
+
+        <div class="demo-item">
+          <ol-heading element="h1" size="display-2" icon="📚">Books Collection</ol-heading>
+          <br>
+          <ol-heading element="h2" size="title-1" icon="⭐">Featured Authors</ol-heading>
+          <br>
+          <ol-heading element="h3" size="title-2" icon="🔍">Search Results</ol-heading>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <ol-heading element="h2" size="title-1">Flexible Elements</ol-heading>
+        <p style="margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">
+          Can render as any HTML element while maintaining heading styles
+        </p>
+
+        <div class="demo-item">
+          <ol-heading element="div" size="title-1">This is a div styled as a heading</ol-heading>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>Usage Examples</h2>
+
+        <h3>Basic Usage:</h3>
+        <pre><code>&lt;ol-heading element="h1" size="display-1"&gt;
+  My Heading Text
+&lt;/ol-heading&gt;
+
+&lt;ol-heading element="h2" size="title-2" icon="📚"&gt;
+  Heading with Icon
+&lt;/ol-heading&gt;</code></pre>
+
+        <h3>Properties:</h3>
+        <ul>
+          <li><strong>element</strong>: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' (default: 'h1')</li>
+          <li><strong>size</strong>: 'display-1' | 'display-2' | 'display-3' | 'title-1' | 'title-2' | 'title-3' | 'title-4' | 'title-5' (default: 'title-1')</li>
+          <li><strong>icon</strong>: string (optional)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- INPUT & FIELD COMPONENTS -->
+    <section id="inputs" style="margin-top: var(--spacing-12);">
+      <ol-heading element="h2" size="display-3" icon="✏️">Input & Field Components</ol-heading>
+      <p style="margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">
+        Form input components with labels, hints, validation, and error states.
+      </p>
+
+      <!-- Basic Examples -->
+      <div class="demo-section">
+        <h2>Basic Field Examples</h2>
+        <div class="form-demo">
+          <ol-field label="Email" required>
+            <ol-input name="email" type="email" placeholder="you@example.com"></ol-input>
+          </ol-field>
+
+          <ol-field label="Username" hint="Choose a unique username">
+            <ol-input name="username" type="text" placeholder="johndoe"></ol-input>
+          </ol-field>
+
+          <ol-field label="Password" hint="At least 8 characters" required>
+            <ol-input name="password" type="password"></ol-input>
+          </ol-field>
+        </div>
+      </div>
+
+      <!-- With Errors -->
+      <div class="demo-section">
+        <h2>Fields with Error Messages</h2>
+        <div class="form-demo">
+          <ol-field label="Email" error="Please enter a valid email address" required>
+            <ol-input name="email-error" type="email" value="invalid-email"></ol-input>
+          </ol-field>
+
+          <ol-field label="Password" error="Password must be at least 8 characters" required>
+            <ol-input name="password-error" type="password" value="123"></ol-input>
+          </ol-field>
+        </div>
+      </div>
+
+      <!-- Different Input Types -->
+      <div class="demo-section">
+        <h2>Different Input Types</h2>
+        <div class="demo-row">
+          <div>
+            <ol-field label="Text Input">
+              <ol-input name="text" type="text" placeholder="Enter text"></ol-input>
+            </ol-field>
+
+            <ol-field label="Email Input">
+              <ol-input name="email-type" type="email" placeholder="you@example.com"></ol-input>
+            </ol-field>
+
+            <ol-field label="Password Input">
+              <ol-input name="password-type" type="password" placeholder="••••••••"></ol-input>
+            </ol-field>
+          </div>
+
+          <div>
+            <ol-field label="URL Input">
+              <ol-input name="url" type="url" placeholder="https://example.com"></ol-input>
+            </ol-field>
+
+            <ol-field label="Number Input">
+              <ol-input name="number" type="number" placeholder="42"></ol-input>
+            </ol-field>
+
+            <ol-field label="Date Input">
+              <ol-input name="date" type="date"></ol-input>
+            </ol-field>
+          </div>
+        </div>
+      </div>
+
+      <!-- States -->
+      <div class="demo-section">
+        <h2>Input States</h2>
+        <div class="form-demo">
+          <ol-field label="Normal Input">
+            <ol-input name="normal" type="text" placeholder="Normal state"></ol-input>
+          </ol-field>
+
+          <ol-field label="Disabled Input">
+            <ol-input name="disabled" type="text" value="Cannot edit this" disabled></ol-input>
+          </ol-field>
+
+          <ol-field label="Readonly Input">
+            <ol-input name="readonly" type="text" value="Read-only value" readonly></ol-input>
+          </ol-field>
+        </div>
+      </div>
+
+      <!-- Working Form -->
+      <div class="demo-section">
+        <h2>Working Form Example</h2>
+        <form id="demoForm" class="form-demo">
+          <ol-field label="Full Name" hint="Enter your first and last name" required>
+            <ol-input name="fullname" type="text" placeholder="Jane Doe"></ol-input>
+          </ol-field>
+
+          <ol-field label="Email Address" hint="We'll never share your email" required>
+            <ol-input name="email-form" type="email" placeholder="jane@example.com"></ol-input>
+          </ol-field>
+
+          <ol-field label="Screen Name" hint="Public and cannot be changed later" required>
+            <ol-input name="screenname" type="text" placeholder="janedoe"></ol-input>
+          </ol-field>
+
+          <ol-field label="Website" hint="Optional">
+            <ol-input name="website" type="url" placeholder="https://yoursite.com"></ol-input>
+          </ol-field>
+
+          <ol-button type="submit">Submit Form</ol-button>
+
+          <div id="submitResult" class="submit-result">
+            <strong>Form Data:</strong>
+            <pre id="formData"></pre>
+          </div>
+        </form>
+      </div>
+
+      <!-- Validation Demo -->
+      <div class="demo-section">
+        <h2>Client-Side Validation Demo</h2>
+        <form id="validationForm" class="form-demo">
+          <ol-field id="email-field" label="Email" hint="Must be a valid email" required>
+            <ol-input id="email-input" name="email-validate" type="email"></ol-input>
+          </ol-field>
+
+          <ol-field id="age-field" label="Age" hint="Must be 18 or older">
+            <ol-input id="age-input" name="age" type="number"></ol-input>
+          </ol-field>
+
+          <ol-button type="submit">Validate</ol-button>
+        </form>
+      </div>
+
+      <!-- Standalone Input -->
+      <div class="demo-section">
+        <h2>Standalone Input (without ol-field)</h2>
+        <p style="margin-bottom: var(--spacing-element); color: var(--color-text-secondary);">
+          You can also use <code>&lt;ol-input&gt;</code> directly without the field wrapper:
+        </p>
+        <div class="form-demo">
+          <label for="standalone-input" style="display: block; margin-bottom: var(--spacing-1); font-weight: 600;">
+            Standalone Input
+          </label>
+          <ol-input id="standalone-input" name="standalone" type="text" placeholder="No field wrapper"></ol-input>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Demo form submission
+    const demoForm = document.getElementById('demoForm');
+    const submitResult = document.getElementById('submitResult');
+    const formData = document.getElementById('formData');
+
+    demoForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const data = new FormData(demoForm);
+      const obj = {};
+      data.forEach((value, key) => {
+        obj[key] = value;
+      });
+
+      formData.textContent = JSON.stringify(obj, null, 2);
+      submitResult.classList.add('show');
+    });
+
+    // Validation form with dynamic error messages
+    const validationForm = document.getElementById('validationForm');
+    const emailField = document.getElementById('email-field');
+    const emailInput = document.getElementById('email-input');
+    const ageField = document.getElementById('age-field');
+    const ageInput = document.getElementById('age-input');
+
+    // Real-time validation for email
+    emailInput.addEventListener('input', () => {
+      const value = emailInput.value;
+      if (value && !value.includes('@')) {
+        emailField.error = 'Please include an @ in the email address';
+      } else if (value && value.includes('@') && !value.includes('.')) {
+        emailField.error = 'Please enter a complete email address';
+      } else {
+        emailField.error = '';
+      }
+    });
+
+    // Validation for age
+    ageInput.addEventListener('input', () => {
+      const value = parseInt(ageInput.value);
+      if (value && value < 18) {
+        ageField.error = 'You must be 18 or older';
+      } else if (value && value > 150) {
+        ageField.error = 'Please enter a valid age';
+      } else {
+        ageField.error = '';
+      }
+    });
+
+    validationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Validate email
+      if (!emailInput.value) {
+        emailField.error = 'Email is required';
+      } else if (!emailInput.value.includes('@')) {
+        emailField.error = 'Please enter a valid email address';
+      } else {
+        emailField.error = '';
+      }
+
+      // Validate age
+      const age = parseInt(ageInput.value);
+      if (age && age < 18) {
+        ageField.error = 'You must be 18 or older';
+      } else if (age && age > 150) {
+        ageField.error = 'Please enter a valid age';
+      } else {
+        ageField.error = '';
+      }
+
+      // Show success if valid
+      if (!emailField.error && !ageField.error && emailInput.value) {
+        alert('Validation passed! ✓');
+      }
+    });
+  </script>
+</body>
+</html>
+
