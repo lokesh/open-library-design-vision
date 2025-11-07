@@ -12,6 +12,8 @@ export class OlMainNav extends LitElement {
       display: flex;
       align-items: center;
       margin-bottom: var(--spacing-section);
+      margin-left: -20px;
+      margin-right: -20px;
       font-size: var(--font-body-sm-size);
     }
 
@@ -22,7 +24,7 @@ export class OlMainNav extends LitElement {
       flex-wrap: nowrap;
       flex: 1;
       margin: 0;
-      padding: 0;
+      padding: 0 20px;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: thin;
