@@ -1,5 +1,5 @@
 {
-  "name": "open-library-design-vision",
+  "name": "open-library-prototype",
   "version": "1.0.0",
   "description": "A minimal web app with Lit components for Open Library",
   "type": "module",

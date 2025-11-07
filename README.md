@@ -27,8 +27,8 @@ A minimal web app built with Lit web components and Vite, inspired by Open Libra
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/lokesh/open-library-design-vision.git
-cd open-library-design-vision
+git clone https://github.com/lokesh/open-library-prototype.git
+cd open-library-prototype
 ```
 
 2. Install dependencies:
@@ -176,11 +176,11 @@ A theme toggle component that switches between light and dark modes.
 
 To connect this project to your GitHub repository:
 
-1. Create a new repository on GitHub at https://github.com/lokesh/open-library-design-vision
+1. Create a new repository on GitHub at https://github.com/lokesh/open-library-prototype
 
 2. Connect your local repository:
 ```bash
-git remote add origin https://github.com/lokesh/open-library-design-vision.git
+git remote add origin https://github.com/lokesh/open-library-prototype.git
 git branch -M main
 git push -u origin main
 ```
