@@ -40,12 +40,12 @@ export class OlMainNav extends LitElement {
     }
 
     ul::-webkit-scrollbar-thumb {
-      background: var(--color-surface-tertiary);
+      background: var(--color-surface-variant);
       border-radius: 2px;
     }
 
     ul::-webkit-scrollbar-thumb:hover {
-      background: var(--color-surface-tertiary-hovered);
+      background: var(--color-surface-variant-hovered);
     }
 
     li {
@@ -58,14 +58,14 @@ export class OlMainNav extends LitElement {
       color: var(--color-on-surface);
       text-decoration: none;
       font-weight: var(--font-weight-semibold);
-      background-color: var(--color-surface-tertiary);
+      background-color: var(--color-surface-variant);
       padding: var(--spacing-inline) var(--spacing-element);
       border-radius: var(--radius-button);
     }
 
     a:hover {
       text-decoration: none;
-      background-color: var(--color-surface-tertiary-hovered);
+      background-color: var(--color-surface-variant-hovered);
     }
   `;
 
@@ -75,7 +75,7 @@ export class OlMainNav extends LitElement {
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="signup.html">Sign Up</a></li>
-          <li><a href="trending.html">Trending Books</a></li>
+          <!-- <li><a href="trending.html">Trending Books</a></li> -->
           <li><a href="components.html">Components</a></li>
           <li><a href="forms.html">Forms</a></li>
           <li><ol-theme-toggle></ol-theme-toggle></li>

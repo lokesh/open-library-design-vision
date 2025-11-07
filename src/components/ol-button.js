@@ -105,8 +105,7 @@ export class OlButton extends LitElement {
 
     /* Focus state */
     button:focus-visible {
-      outline: 2px solid #000;
-      outline-offset: 2px;
+      outline: var(--focus-ring-width) solid var(--color-primary);
     }
 
     /* Loading state */

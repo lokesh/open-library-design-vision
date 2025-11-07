@@ -209,7 +209,7 @@ input:focus {
   object-fit: cover;
   border-radius: var(--radius-image);
   margin-bottom: 12px;
-  background-color: var(--color-surface-tertiary);
+  background-color: var(--color-surface-variant);
 }
 
 .book-item h3 {
@@ -246,7 +246,7 @@ input:focus {
   aspect-ratio: 2 / 3;
   object-fit: cover;
   border-radius: var(--radius-image);
-  background-color: var(--color-surface-tertiary);
+  background-color: var(--color-surface-variant);
 }
 
 /* Responsive layout for trending covers */

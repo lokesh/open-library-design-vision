@@ -1,24 +1,17 @@
 :root {
   /* ========================================
      TIER 2: ROLE/ALIAS TOKENS
-     Purpose-based, component-agnostic tokens that reference primitives
      These are themeable and provide semantic meaning
      ======================================== */
 
   /* === SURFACE SYSTEM === */
-  /* Surfaces define background layers in your UI */
 
   /* Main page/app background - use for primary content areas, body background */
   --color-surface: var(--color-neutral-100);
 
   /* Secondary backgrounds - use for cards, sidebars, navigation, elevated panels */
   --color-surface-variant: var(--color-neutral-200);
-
-  /* Tertiary backgrounds - use for subtle differentiation, nested cards, hover states on surfaces */
-  --color-surface-tertiary: var(--color-neutral-300);
-
-  /* High-contrast inverse surfaces - use for tooltips, toasts, inverse-themed components */
-  --color-surface-inverse: var(--color-neutral-900);
+  --color-surface-variant-hovered: var(--color-neutral-300);
 
 
   /* === ON-SURFACE COLORS === */
@@ -29,15 +22,6 @@
 
   /* Secondary/muted text - captions, labels, supporting text, placeholders */
   --color-on-surface-variant: var(--color-neutral-600);
-
-  /* Tertiary/de-emphasized text - timestamps, helper text, low-priority content */
-  --color-on-surface-tertiary: var(--color-neutral-500);
-  --color-surface-tertiary-hovered: var(--color-neutral-400);
-  /* Disabled text and elements - visually indicates non-interactive state */
-  --color-on-surface-disabled: var(--color-neutral-400);
-
-  /* Text on inverse surfaces - guaranteed contrast on dark backgrounds */
-  --color-on-surface-inverse: var(--color-white);
 
   /* === PRIMARY BRAND SYSTEM === */
   /* Use for primary actions, key interactive elements, brand expression */
@@ -240,17 +224,10 @@ body[data-theme="dark"] {
   /* === SURFACE SYSTEM - DARK === */
   --color-surface: var(--color-neutral-900);
   --color-surface-variant: var(--color-neutral-800);
-  --color-surface-tertiary: var(--color-neutral-700);
-  --color-surface-inverse: var(--color-neutral-50);
-
-  --color-surface-tertiary-hovered: var(--color-neutral-600);
-
+  --color-surface-variant-hovered: var(--color-neutral-700);
   /* === ON-SURFACE COLORS - DARK === */
   --color-on-surface: var(--color-neutral-100);
   --color-on-surface-variant: var(--color-neutral-400);
-  --color-on-surface-tertiary: var(--color-neutral-500);
-  --color-on-surface-disabled: var(--color-neutral-600);
-  --color-on-surface-inverse: var(--color-neutral-900);
 
   /* === PRIMARY BRAND - DARK === */
   /* Slightly lighter for better visibility on dark backgrounds */
@@ -322,62 +299,4 @@ body[data-theme="dark"] {
   --card-on-surface: var(--color-on-surface);
   --card-outline: var(--color-border-default);
 
-}
-
-/* ========================================
-   HEADING COMPONENT STYLES (for light DOM)
-   ======================================== */
-
-.ol-heading {
-  font-family: var(--font-heading-family);
-  font-weight: var(--font-heading-weight);
-  line-height: var(--font-heading-line-height);
-  color: var(--color-on-surface);
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-}
-
-/* Display sizes - largest headings */
-.ol-heading.display-1 {
-  font-size: var(--heading-display-1-size);
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-.ol-heading.display-2 {
-  font-size: var(--heading-display-2-size);
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-.ol-heading.display-3 {
-  font-size: var(--heading-display-3-size);
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-/* Title sizes - standard headings */
-.ol-heading.title-1 {
-  font-size: var(--heading-title-1-size);
-}
-
-.ol-heading.title-2 {
-  font-size: var(--heading-title-2-size);
-}
-
-.ol-heading.title-3 {
-  font-size: var(--heading-title-3-size);
-}
-
-.ol-heading.title-4 {
-  font-size: var(--heading-title-4-size);
-}
-
-.ol-heading.title-5 {
-  font-size: var(--heading-title-5-size);
-}
-
-.ol-heading-icon {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
 }
