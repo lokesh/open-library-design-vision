@@ -38,7 +38,7 @@ export class OlButton extends LitElement {
     }
 
     button {
-      border: var(--border-width-control) solid var(--color-primary);
+      border: var(--border-width-control) solid var(--color-brand-primary);
       border-radius: var(--radius-button);
       cursor: pointer;
       font-family: var(--body-font-family);
@@ -70,12 +70,12 @@ export class OlButton extends LitElement {
 
     /* Variant styles */
     button.primary {
-      background-color: var(--color-primary);
+      background-color: var(--color-bg-primary);
       color: white;
     }
 
     button.primary:hover:not(:disabled) {
-      background-color: var(--color-primary-hovered);
+      background-color: var(--color-bg-primary-hovered);
     }
 
     button.secondary {

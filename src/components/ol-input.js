@@ -35,9 +35,9 @@ export class OlInput extends LitElement {
       padding: var(--input-padding-y) var(--input-padding-x);
       font-size: var(--input-font-size);
       font-family: inherit;
-      color: var(--input-on-surface);
-      background-color: var(--input-surface);
-      border: var(--input-border-width) solid var(--input-outline);
+      color: var(--input-color-text);
+      background-color: var(--input-color-bg);
+      border: var(--input-border-width) solid var(--input-border);
       border-radius: var(--radius-input);
       box-sizing: border-box;
     }
@@ -47,12 +47,12 @@ export class OlInput extends LitElement {
     }
 
     input:hover:not(:disabled) {
-      border-color: var(--input-outline-hovered);
+      border-color: var(--input-border-hovered);
     }
 
     input:focus {
       outline: none;
-      border-color: var(--input-outline-focused);
+      border-color: var(--input-border-focused);
       box-shadow: var(--input-focus-ring);
     }
 
@@ -64,7 +64,7 @@ export class OlInput extends LitElement {
 
     /* Only show error state when explicitly marked invalid via aria-invalid */
     input[aria-invalid="true"] {
-      border-color: var(--input-outline-error);
+      border-color: var(--input-border-error);
     }
   `;
 

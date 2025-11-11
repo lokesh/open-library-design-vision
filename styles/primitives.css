@@ -1,10 +1,22 @@
 :root {
-  /* ========================================
-      TIER 1: PRIMITIVE TOKENS
-      Base values that should rarely be used directly
-      ======================================== */
+/* ========================================
+# TIER 1: PRIMITIVE TOKENS
+
+## When to use
+They should rarely be used directly. They are used to define value for the semantic tokens.
+
+## Naming strategy
+Pattern: --{category}-{scale/type}
+
+Examples:
+--font-family-{type} (sans, serif, mono)
+--font-size-{scale} (xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl)
+--color-{hue}-{scale} (e.g., --color-neutral-50, --color-blue-500)
+======================================== */
 
   /* COLORS */
+
+
   --color-white: #ffffff;
   --color-black: #000000;
 

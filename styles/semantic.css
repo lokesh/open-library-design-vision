@@ -28,17 +28,15 @@
   /* Use for primary actions, key interactive elements, brand expression */
 
   /* Primary brand color - main CTAs, important buttons, active states */
-  --color-primary: var(--color-brand-primary);
-  --color-primary-hovered: var(--color-brand-primary-hovered);
-  --color-primary-pressed: var(--color-blue-800);
-  --color-primary-focused: var(--color-blue-500);
+  --color-bg-primary: var(--color-brand-primary);
+  --color-bg-primary-hovered: var(--color-brand-primary-hovered);
+  --color-bg-primary-pressed: var(--color-blue-800);
+  --color-bg-primary-focused: var(--color-blue-500);
 
 
   /* === ERROR SYSTEM === */
   /* Use for errors, destructive actions, validation failures */
-
   --color-error: var(--color-red-600);
-
 
   /* === BORDER & OUTLINE ROLES === */
   /* Use for visual separation and hierarchy */
@@ -52,23 +50,23 @@
   /* Strong borders - high-emphasis separation, active states */
   --color-border-strong: var(--color-neutral-400);
 
-  /* Focus outline - keyboard focus indicator, accessibility critical */
-  --color-outline-focus: var(--color-primary);
+  /* Focus border - keyboard focus indicator, accessibility critical */
+  --color-border-focused: var(--color-brand-primary);
 
-  /* Error outline - validation errors, problematic fields */
-  --color-outline-error: var(--color-red-600);
+  /* Error border - validation errors, problematic fields */
+  --color-border-error: var(--color-red-600);
 
   /* === LINK COLORS === */
   /* Use for hyperlinks and text-based navigation */
 
-  --color-link: var(--color-primary);
-  --color-link-hovered: var(--color-primary-hovered);
+  --color-link: var(--color-brand-primary);
+  --color-link-hovered: var(--color-brand-primary-hovered);
   --color-link-visited: var(--color-blue-800);
 
   /* === FOCUS RING === */
   /* Accessible focus indicators */
 
-  --focus-ring-color: var(--color-outline-focus);
+  --focus-ring-color: var(--color-border-focused);
   --focus-ring: 0 0 0 var(--focus-ring-width) rgba(59, 130, 246, 0.2);
 
   /* === SEMANTIC TYPOGRAPHY === */
@@ -142,12 +140,12 @@
   --button-lg-font-size: var(--body-font-size-lg);
 
   /* === INPUT COMPONENTS === */
-  --input-surface: var(--color-bg-elevated);
-  --input-on-surface: var(--color-text);
-  --input-outline: var(--color-border);
-  --input-outline-hovered: var(--color-outline-focus);
-  --input-outline-focused: var(--color-primary);
-  --input-outline-error: var(--color-outline-error);
+  --input-color-bg: var(--color-bg-elevated);
+  --input-color-text: var(--color-text);
+  --input-border: var(--color-border);
+  --input-border-hovered: var(--color-border-focused);
+  --input-border-focused: var(--color-brandprimary);
+  --input-border-error: var(--color-border-error);
 
   --input-padding-x: var(--spacing-3);
   --input-padding-y: var(--spacing-2);
@@ -189,9 +187,9 @@ body[data-theme="dark"] {
   --color-bg: var(--color-neutral-900);
   --color-bg-elevated: var(--color-neutral-800);
   --color-bg-elevated-hovered: var(--color-neutral-700);
-  --input-surface: var(--color-bg-elevated);
+  --input-color-bg: var(--color-bg-elevated);
   /* === TEXT COLORS - DARK === */
-  --color-text: var(--color-neutral-100);
+  --color-text: var(--color-neutral-400);
   --color-text-strong: var(--color-neutral-50);
   --color-text-secondary: var(--color-neutral-400);
   --color-text-on-elevated: var(--color-neutral-400);
@@ -201,16 +199,6 @@ body[data-theme="dark"] {
   --display-color: var(--color-text-strong);
   --heading-color: var(--color-text-strong);
 
-  /* === PRIMARY BRAND - DARK === */
-  /* Slightly lighter for better visibility on dark backgrounds */
-  --color-primary: var(--color-brand-primary);
-  --color-on-primary: var(--color-white);
-
-  --color-primary-hovered: var(--color-brand-primary-hovered);
-  --color-primary-pressed: var(--color-blue-600);
-  --color-primary-focused: var(--color-blue-400);
-
-
   /* === ERROR - DARK === */
   --color-error: var(--color-red-500);
 
@@ -219,8 +207,8 @@ body[data-theme="dark"] {
   --color-border: var(--color-neutral-700);
   --color-border-subtle: var(--color-neutral-800);
   --color-border-strong: var(--color-neutral-600);
-  --color-outline-focus: var(--color-blue-500);
-  --color-outline-error: var(--color-red-500);
+  --color-border-focused: var(--color-blue-500);
+  --color-border-error: var(--color-red-500);
 
   /* === LINKS - DARK === */
   --color-link: var(--color-blue-400);
@@ -230,26 +218,26 @@ body[data-theme="dark"] {
 
   /* === FOCUS RING - DARK === */
   /* Brighter for visibility in dark mode */
-  --focus-ring-color: var(--color-outline-focus);
+  --focus-ring-color: var(--color-border-focused);
   --focus-ring: 0 0 0 var(--focus-ring-width) rgba(59, 130, 246, 0.4);
 
   /* === COMPONENT TOKENS - DARK === */
   /* Explicitly override component color tokens for clarity */
 
   /* Button components */
-  --button-container: var(--color-primary);
-  --button-on-container: var(--color-on-primary);
+  --button-container: var(--color-brand-primary);
+  --button-on-container: var(--color-texton-primary);
   --button-container-hovered: var(--color-primary-hovered);
   --button-container-pressed: var(--color-primary-pressed);
   --button-focus-ring: var(--focus-ring);
 
   /* Input components */
-  /* --input-surface: var(--color-bg-recessed); */
-  --input-on-surface: var(--color-text);
-  --input-outline: var(--color-border);
-  --input-outline-hovered: var(--color-outline-focus);
-  --input-outline-focused: var(--color-primary);
-  --input-outline-error: var(--color-outline-error);
+  /* --input-color-bg: var(--color-bg-recessed); */
+  --input-color-text: var(--color-text);
+  --input-border: var(--color-border);
+  --input-border-hovered: var(--color-border-focus);
+  --input-border-focused: var(--color-brand-primary);
+  --input-border-error: var(--color-border-error);
   --input-placeholder-color: var(--color-text-on-elevated);
   --input-disabled-surface: var(--color-bg-elevated);
   --input-focus-ring: var(--focus-ring);

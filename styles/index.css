@@ -10,7 +10,7 @@ body {
   font-family: var(--body-font-family);
   line-height: var(--body-line-height);
   color: var(--color-text);
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: var(--color-bg);
@@ -79,16 +79,16 @@ input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: var(--input-padding-y) var(--input-padding-x);
-  border: var(--input-border-width) solid var(--input-outline);
+  border: var(--input-border-width) solid var(--input-border);
   border-radius: var(--radius-input);
   font-size: var(--input-font-size);
-  background-color: var(--input-surface);
-  color: var(--input-on-surface);
+  background-color: var(--input-color-bg);
+  color: var(--input-color-text);
 }
 
 input:focus {
   outline: none;
-  border-color: var(--input-outline-focused);
+  border-color: var(--input-border-focused);
   box-shadow: var(--input-focus-ring);
 }
 
