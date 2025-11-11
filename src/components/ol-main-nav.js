@@ -20,7 +20,6 @@ export class OlMainNav extends LitElement {
     ul {
       list-style: none;
       display: flex;
-      gap: 8px;
       flex-wrap: nowrap;
       flex: 1;
       margin: 0;
@@ -60,11 +59,9 @@ export class OlMainNav extends LitElement {
       font-weight: var(--font-weight-semibold);
       background-color: var(--color-bg-elevated);
       padding: var(--spacing-inline) var(--spacing-element);
-      border-radius: var(--radius-button);
     }
 
     a:hover {
-      text-decoration: none;
       background-color: var(--color-bg-elevated-hovered);
     }
   `;

@@ -43,7 +43,7 @@ export class OlInput extends LitElement {
     }
 
     input::placeholder {
-      color: var(--input-placeholder-color);
+      color: var(--input-color-placeholder);
     }
 
     input:hover:not(:disabled) {

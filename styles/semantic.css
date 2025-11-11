@@ -1,8 +1,44 @@
 :root {
-  /* ========================================
-     TIER 2: ROLE/ALIAS TOKENS
-     These are themeable and provide semantic meaning
-     ======================================== */
+/* ========================================
+# TIER 2: SEMANTIC TOKENS
+Here we map primitive values to specific UI roles.
+Use these (not primitives) in your components.
+
+There are some tokens here that appear to be component tokens, but
+are meant to be used in multiple components. e.g. input-* are
+meant to be used not just in the input component but most form
+controls.
+
+## Naming Patterns
+
+### Color/Surface tokens:
+--{category}-{role}-{variant/state}
+
+Examples:
+- --color-text-{variant}     → strong, secondary, etc.
+- --color-bg-{variant}        → elevated, recessed, hovered
+- --color-border-{variant}    → focused, error, subtle
+
+### Component properties:
+--{component}-{property}
+
+Examples:
+--heading-font-family
+--button-padding-x
+--input-min-height
+
+## The "on-" Pattern
+
+Paired relationships ensure proper contrast:
+--color-bg-{surface} → --color-text-on-{surface}
+
+Examples:
+- --color-bg-primary       → --color-text-on-primary
+- --color-bg-elevated      → --color-text-on-elevated
+- --color-bg-recessed      → --color-text-on-recessed
+
+This pattern makes dark mode transitions automatic.
+======================================== */
 
   /* Main page/app background - use for primary content areas, body background */
   --color-bg: var(--color-neutral-100);
@@ -93,7 +129,6 @@
   /* === SEMANTIC SPACING === */
   --spacing-text-bottom: var(--spacing-1);
   --spacing-heading-bottom: var(--spacing-2);
-
   --spacing-section: var(--spacing-8);
   --spacing-field: var(--spacing-6);
   --spacing-component: var(--spacing-6);
@@ -125,8 +160,6 @@
   /* === BUTTON COMPONENTS === */
   --button-padding-x: var(--spacing-element);
   --button-padding-y: var(--spacing-inline);
-  /* --button-font-size: var(--body-font-size);
-  --button-font-weight: var(--body-font-weight); */
   --button-border-width: var(--border-width-2);
   --button-focus-ring: var(--focus-ring);
 
@@ -142,6 +175,7 @@
   /* === INPUT COMPONENTS === */
   --input-color-bg: var(--color-bg-elevated);
   --input-color-text: var(--color-text);
+  --input-color-placeholder: var(--color-text-secondary);
   --input-border: var(--color-border);
   --input-border-hovered: var(--color-border-focused);
   --input-border-focused: var(--color-brandprimary);
@@ -153,7 +187,6 @@
   --input-border-width: var(--border-width-control);
   --input-focus-ring: var(--focus-ring);
   --input-min-height: var(--control-height-md);
-  --input-placeholder-color: var(--color-text-on-elevated);
   --input-disabled-surface: var(--color-bg-elevated);
   --input-disabled-opacity: var(--opacity-disabled);
 
@@ -224,21 +257,14 @@ body[data-theme="dark"] {
   /* === COMPONENT TOKENS - DARK === */
   /* Explicitly override component color tokens for clarity */
 
-  /* Button components */
-  --button-container: var(--color-brand-primary);
-  --button-on-container: var(--color-texton-primary);
-  --button-container-hovered: var(--color-primary-hovered);
-  --button-container-pressed: var(--color-primary-pressed);
-  --button-focus-ring: var(--focus-ring);
-
   /* Input components */
   /* --input-color-bg: var(--color-bg-recessed); */
   --input-color-text: var(--color-text);
+  --input-color-placeholder: var(--color-neutral-600);
   --input-border: var(--color-border);
   --input-border-hovered: var(--color-border-focus);
   --input-border-focused: var(--color-brand-primary);
   --input-border-error: var(--color-border-error);
-  --input-placeholder-color: var(--color-text-on-elevated);
   --input-disabled-surface: var(--color-bg-elevated);
   --input-focus-ring: var(--focus-ring);
 
