@@ -73,7 +73,6 @@ export class OlMainNav extends LitElement {
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="signup.html">Sign Up</a></li>
-          <!-- <li><a href="trending.html">Trending Books</a></li> -->
           <li><a href="components.html">Components</a></li>
           <li><a href="forms.html">Tests</a></li>
           <li><ol-theme-toggle></ol-theme-toggle></li>

@@ -8,7 +8,6 @@ export default defineConfig(({ command }) => ({
       input: {
         main: resolve(__dirname, 'index.html'),
         signup: resolve(__dirname, 'signup.html'),
-        trending: resolve(__dirname, 'trending.html'),
         forms: resolve(__dirname, 'forms.html'),
         components: resolve(__dirname, 'components.html'),
       },
