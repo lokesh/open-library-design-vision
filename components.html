@@ -25,11 +25,34 @@
       margin-bottom: var(--spacing-component);
       color: var(--color-text);
     }
+
+    .dropdown-item {
+      display: block;
+      width: 100%;
+      padding: var(--spacing-inline);
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--color-text);
+      border-radius: var(--radius-button);
+    }
+    .dropdown-item:hover {
+      background: var(--color-bg-elevated-hovered);
+    }
   </style>
 </head>
 <body>
   <ol-main-nav></ol-main-nav>
 
+  <ol-dropdown-button variant="primary">
+    Actions
+    <div slot="dropdown" style="padding: 8px;">
+      <div slot="dropdown">
+        <a href="#" class="dropdown-item">View Profile</a>
+        <a href="#" class="dropdown-item">Settings</a>
+        <ol-button variant="destructive" style="width: 100%;">Sign Out</ol-button>
+      </div>
+    </div>
+  </ol-dropdown-button>
   <main>
     <ol-heading element="h1" size="display-1">Components</ol-heading>
 
@@ -108,6 +131,49 @@
       </div>
 
       <div class="demo-section">
+        <ol-heading element="h2" size="heading-2">Dropdown Button</ol-heading>
+
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: var(--spacing-component);">
+          <div style="display: flex; gap: var(--spacing-element); flex-wrap: wrap;">
+            <ol-dropdown-button variant="primary">
+              Actions
+              <div slot="dropdown" style="padding: 8px;">
+                <a href="#" class="dropdown-item">View Profile</a>
+                <a href="#" class="dropdown-item">Settings</a>
+                <ol-button variant="destructive" style="width: 100%;">Sign Out</ol-button>
+              </div>
+            </ol-dropdown-button>
+
+            <ol-dropdown-button variant="secondary">
+              Options
+              <div slot="dropdown" style="padding: 8px;">
+                <button style="display: block; width: 100%; padding: 6px; margin-bottom: 4px; cursor: pointer;">Share</button>
+                <button style="display: block; width: 100%; padding: 6px; cursor: pointer;">Export</button>
+              </div>
+            </ol-dropdown-button>
+          </div>
+          <div style="border: var(--border-control); background: var(--color-white); border-radius: var(--radius-card); overflow: hidden;">
+            <pre style="margin: 0; padding: var(--spacing-element);"><code>&lt;ol-dropdown-button variant="primary"&gt;
+  Actions
+  &lt;div slot="dropdown" style="padding: 8px;"&gt;
+    &lt;a href="#" class="dropdown-item"&gt;View Profile&lt;/a&gt;
+    &lt;a href="#" class="dropdown-item"&gt;Settings&lt;/a&gt;
+    &lt;ol-button variant="destructive" style="width: 100%;"&gt;Sign Out&lt;/ol-button&gt;
+  &lt;/div&gt;
+&lt;/ol-dropdown-button&gt;
+
+&lt;ol-dropdown-button variant="secondary"&gt;
+  Options
+  &lt;div slot="dropdown" style="padding: 8px;"&gt;
+    &lt;button style="display: block; width: 100%; padding: 6px; margin-bottom: 4px; cursor: pointer;"&gt;Share&lt;/button&gt;
+    &lt;button style="display: block; width: 100%; padding: 6px; cursor: pointer;"&gt;Export&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/ol-dropdown-button&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-section">
         <ol-heading element="h2" size="heading-2">Card</ol-heading>
 
         <ol-demo-pane>
@@ -181,6 +247,16 @@
         }, 2000);
       });
     }
+
+    // Dropdown button click event demo
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdownButtons = document.querySelectorAll('ol-dropdown-button');
+      dropdownButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          console.log('Dropdown button main action clicked:', e.target);
+        });
+      });
+    });
   </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 // Import all components for side-effect registration
 import './ol-button.js';
 import './ol-button-group.js';
+import './ol-dropdown-button.js';
 import './ol-heading.js';
 import './ol-theme-toggle.js';
 import './ol-input.js';

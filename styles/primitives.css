@@ -135,5 +135,8 @@ Examples:
 
   /* FOCUS RING */
   --focus-ring-width: 3px;
+
+  /* Z-INDEX */
+  --z-index-dropdown: 1000;
 }
 
