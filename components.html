@@ -12,6 +12,8 @@
   <script src="https://unpkg.com/prismjs/prism.js"></script>
   <script src="https://unpkg.com/prismjs/components/prism-markup.min.js"></script>
   <script type="module" src="/src/components/index.js"></script>
+  <!-- Import progressive enhancement script -->
+  <script type="module" src="/src/components/enhance.js"></script>
   <style>
     .demo-section {
       margin-bottom: var(--spacing-section);
@@ -38,6 +40,41 @@
     .dropdown-item:hover {
       background: var(--color-bg-elevated-hovered);
     }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-component);
+      margin-bottom: var(--spacing-component);
+    }
+
+    .comparison-panel {
+      border: var(--border-control);
+      border-radius: var(--radius-card);
+      padding: var(--spacing-component);
+      background: var(--color-bg-elevated);
+    }
+
+    .comparison-panel h3 {
+      margin-top: 0;
+      margin-bottom: var(--spacing-element);
+      font-size: var(--body-font-size);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-secondary);
+    }
+
+    .comparison-panel .demo-output {
+      margin-bottom: var(--spacing-element);
+      padding: var(--spacing-component);
+      background: var(--color-bg);
+      border-radius: var(--radius-button);
+    }
+
+    @media (max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -53,6 +90,180 @@
     <p>The Internet Archive UX team has adopted Lit and is introducing web components to the site.</p>
     </p>
 
+    <!-- PROGRESSIVE ENHANCEMENT SECTION -->
+    <section id="progressive-enhancement" style="margin-top: var(--spacing-12);">
+      <ol-heading element="h2" size="title-1">Progressive Enhancement</ol-heading>
+
+      <p class="lead">
+        These components support progressive enhancement. You can write standard HTML that works without JavaScript,
+        then automatically enhance it with web components when the script loads.
+      </p>
+
+      <div class="demo-section">
+        <ol-heading element="h3" size="title-2">Headings: Direct vs Enhanced</ol-heading>
+
+        <div class="comparison-grid">
+          <div class="comparison-panel">
+            <h3>🎯 Direct Web Component Usage</h3>
+            <div class="demo-output">
+              <ol-heading element="h1" size="display-2" icon="📚">Books & Reading</ol-heading>
+            </div>
+            <pre><code class="language-html">&lt;ol-heading element="h1" size="display-2" icon="📚"&gt;
+  Books & Reading
+&lt;/ol-heading&gt;</code></pre>
+            <p><small><strong>Pros:</strong> Explicit, clear API, full component features</small></p>
+          </div>
+
+          <div class="comparison-panel">
+            <h3>✨ Progressive Enhancement</h3>
+            <div class="demo-output">
+              <h1 data-ol-heading data-size="display-2" data-icon="📚">Books & Reading</h1>
+            </div>
+            <pre><code class="language-html">&lt;h1 data-ol-heading data-size="display-2" data-icon="📚"&gt;
+  Books & Reading
+&lt;/h1&gt;</code></pre>
+            <p><small><strong>Pros:</strong> Works without JS, semantic HTML, SEO-friendly</small></p>
+          </div>
+        </div>
+
+        <div style="padding: var(--spacing-component); background: var(--color-bg-info); border-radius: var(--radius-card); margin-top: var(--spacing-component);">
+          <p style="margin: 0;"><strong>💡 How it works:</strong> Elements with <code>data-ol-heading</code> are automatically
+          upgraded to <code>&lt;ol-heading&gt;</code> components when the page loads. The HTML works perfectly
+          without JavaScript, then gets enhanced styling and features when available.</p>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <ol-heading element="h3" size="title-2">Buttons: Direct vs Enhanced</ol-heading>
+
+        <div class="comparison-grid">
+          <div class="comparison-panel">
+            <h3>🎯 Direct Web Component Usage</h3>
+            <div class="demo-output" style="display: flex; gap: var(--spacing-element); flex-wrap: wrap;">
+              <ol-button variant="primary">Primary</ol-button>
+              <ol-button variant="secondary">Secondary</ol-button>
+              <ol-button variant="destructive">Delete</ol-button>
+            </div>
+            <pre><code class="language-html">&lt;ol-button variant="primary"&gt;Primary&lt;/ol-button&gt;
+&lt;ol-button variant="secondary"&gt;Secondary&lt;/ol-button&gt;
+&lt;ol-button variant="destructive"&gt;Delete&lt;/ol-button&gt;</code></pre>
+          </div>
+
+          <div class="comparison-panel">
+            <h3>✨ Progressive Enhancement</h3>
+            <div class="demo-output" style="display: flex; gap: var(--spacing-element); flex-wrap: wrap;">
+              <button type="button" data-ol-button data-variant="primary">Primary</button>
+              <button type="button" data-ol-button data-variant="secondary">Secondary</button>
+              <button type="button" data-ol-button data-variant="destructive">Delete</button>
+            </div>
+            <pre><code class="language-html">&lt;button data-ol-button data-variant="primary"&gt;Primary&lt;/button&gt;
+&lt;button data-ol-button data-variant="secondary"&gt;Secondary&lt;/button&gt;
+&lt;button data-ol-button data-variant="destructive"&gt;Delete&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <ol-heading element="h3" size="title-2">Button Groups: Direct vs Enhanced</ol-heading>
+
+        <div class="comparison-grid">
+          <div class="comparison-panel">
+            <h3>🎯 Direct Web Component Usage</h3>
+            <div class="demo-output">
+              <ol-button-group>
+                <ol-button variant="primary" slot="primary-action">Save Changes</ol-button>
+                <ol-button variant="secondary" slot="secondary-actions">Cancel</ol-button>
+                <ol-button variant="destructive" slot="secondary-actions">Delete</ol-button>
+              </ol-button-group>
+            </div>
+            <pre><code class="language-html">&lt;ol-button-group&gt;
+  &lt;ol-button variant="primary" slot="primary-action"&gt;
+    Save Changes
+  &lt;/ol-button&gt;
+  &lt;ol-button variant="secondary" slot="secondary-actions"&gt;
+    Cancel
+  &lt;/ol-button&gt;
+  &lt;ol-button variant="destructive" slot="secondary-actions"&gt;
+    Delete
+  &lt;/ol-button&gt;
+&lt;/ol-button-group&gt;</code></pre>
+          </div>
+
+          <div class="comparison-panel">
+            <h3>✨ Progressive Enhancement</h3>
+            <div class="demo-output">
+              <div data-ol-button-group>
+                <button type="button" data-ol-button data-variant="primary">Save Changes</button>
+                <button type="button" data-ol-button data-variant="secondary">Cancel</button>
+                <button type="button" data-ol-button data-variant="destructive">Delete</button>
+              </div>
+            </div>
+            <pre><code class="language-html">&lt;div data-ol-button-group&gt;
+  &lt;button data-ol-button data-variant="primary"&gt;
+    Save Changes
+  &lt;/button&gt;
+  &lt;button data-ol-button data-variant="secondary"&gt;
+    Cancel
+  &lt;/button&gt;
+  &lt;button data-ol-button data-variant="destructive"&gt;
+    Delete
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div style="padding: var(--spacing-component); background: var(--color-bg-success); border-radius: var(--radius-card); margin-top: var(--spacing-component);">
+          <p style="margin: 0;"><strong>✅ Best Practice:</strong> The first child becomes the primary action,
+          remaining children become secondary actions. This provides a sensible default layout that works
+          on both mobile (stacked) and desktop (horizontal).</p>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <ol-heading element="h3" size="title-2">Form Integration Example</ol-heading>
+        <p>Progressive enhancement shines in forms where native HTML is crucial for accessibility and functionality:</p>
+
+        <div style="max-width: 500px; padding: var(--spacing-component); background: var(--color-bg); border-radius: var(--radius-card);">
+          <form id="enhanced-form">
+            <h2 data-ol-heading data-size="title-3">Sign Up</h2>
+
+            <div style="margin-bottom: var(--spacing-component);">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" required style="width: 100%; padding: var(--spacing-inline); margin-top: var(--spacing-1);">
+            </div>
+
+            <div style="margin-bottom: var(--spacing-component);">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required style="width: 100%; padding: var(--spacing-inline); margin-top: var(--spacing-1);">
+            </div>
+
+            <div data-ol-button-group>
+              <button type="submit" data-ol-button data-variant="primary">Create Account</button>
+              <button type="button" data-ol-button data-variant="secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <pre style="margin-top: var(--spacing-component);"><code class="language-html">&lt;form&gt;
+  &lt;h2 data-ol-heading data-size="title-3"&gt;Sign Up&lt;/h2&gt;
+
+  &lt;label for="username"&gt;Username&lt;/label&gt;
+  &lt;input type="text" id="username" required&gt;
+
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input type="email" id="email" required&gt;
+
+  &lt;div data-ol-button-group&gt;
+    &lt;button type="submit" data-ol-button data-variant="primary"&gt;
+      Create Account
+    &lt;/button&gt;
+    &lt;button type="button" data-ol-button data-variant="secondary"&gt;
+      Cancel
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+    </section>
 
     <!-- DEMO PANE COMPONENT -->
     <section id="demo-pane" style="margin-top: var(--spacing-12);">
